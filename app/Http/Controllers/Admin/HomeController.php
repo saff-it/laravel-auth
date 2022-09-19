@@ -31,7 +31,6 @@ class HomeController extends Controller
         $user = Auth::user();
         $id = Auth::id();
 
-        dd($user, $id);
         return view('admin.home', compact('user','id'));
     }
 }

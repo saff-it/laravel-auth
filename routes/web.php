@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('guest.welcome');
+    return view('admin/posts/index');
 });
 
 Auth::routes();
