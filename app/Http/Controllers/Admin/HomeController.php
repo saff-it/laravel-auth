@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Show the application dashboard.
      *
@@ -26,6 +26,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $id = Auth::id();
+
+        dd($user, $id);
+        return view('admin.home', compact('user','id'));
     }
 }
