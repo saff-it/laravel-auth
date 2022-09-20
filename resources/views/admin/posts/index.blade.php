@@ -17,7 +17,7 @@
             <tr>
                 <th scope="row">{{$post -> id}}</th>
                 <td>
-                    <a href="{{ route('posts.show', $post -> id) }}">
+                    <a href="{{ route('admin.posts.show', $post -> id) }}">
                         {{$post -> title}}
                     </a>
                     
@@ -25,7 +25,7 @@
                 <td>{{$post -> author}}</td>
                 <td>{{$post -> post_date}}</td>
                 <td>{{$post -> post_content}}</td>
-                <td><button> <a href="{{route('posts.edit', $post->id)}}"> Edit</a></button></td>
+                <td><button> <a href="{{route('admin.posts.edit', $post->id)}}"> Edit</a></button></td>
                 <td>
                   {{-- <form class="delete-item" action="{{route('posts.destroy', $post->id)}}" method="POST">
                         @csrf
