@@ -27,11 +27,11 @@
                 <td>{{$post -> post_content}}</td>
                 <td><button> <a href="{{route('admin.posts.edit', $post->id)}}"> Edit</a></button></td>
                 <td>
-                  {{-- <form class="delete-item" action="{{route('posts.destroy', $post->id)}}" method="POST">
+                  <form class="delete-item" action="{{route('admin.posts.destroy', $post->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
-                  </form> --}}
+                  </form>
                 </td>             
               
             </tr>
