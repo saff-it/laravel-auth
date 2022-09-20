@@ -32,7 +32,9 @@
                         @method('DELETE')
                         <button type="submit">Delete</button>
                   </form>
-                </td>             
+                </td>  
+                <td><button> <a href="{{route('admin.posts.create', $post->id)}}"> Create</a></button></td>
+
               
             </tr>
         @endforeach

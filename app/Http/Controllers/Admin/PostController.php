@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -38,7 +38,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataInput = $request ->all();
+
+        $post = new Post();
+        $post -> author = $dataInput['author']; 
+        $post -> title = $dataInput['title']; 
+        $post-> post_content = $dataInput['post_content'];
+        $post -> post_date = $dataInput['post_date']; 
+
+        $post -> save();
+
+        return redirect()->route('admin.posts.show', compact('post'));
     }
 
     /**
@@ -62,7 +72,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);   
-        return view('admin/posts/edit', compact('post'));  
+        return view('admin.posts.edit', compact('post'));  
     }
 
     /**
