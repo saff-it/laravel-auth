@@ -22,16 +22,16 @@
                     </a>
                     
                 </td>
-                <td>{{$post -> price}}</td>
-                <td>{{$post -> sale_date}}</td>
-                <td>{{$post -> type}}</td>
+                <td>{{$post -> author}}</td>
+                <td>{{$post -> post_date}}</td>
+                <td>{{$post -> post_content}}</td>
                 <td><button> <a href="{{route('posts.edit', $post->id)}}"> Edit</a></button></td>
                 <td>
-                  <form class="delete-item" action="{{route('posts.destroy', $post->id)}}" method="POST">
+                  {{-- <form class="delete-item" action="{{route('posts.destroy', $post->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
-                  </form>
+                  </form> --}}
                 </td>             
               
             </tr>
