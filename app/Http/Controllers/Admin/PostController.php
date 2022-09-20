@@ -27,6 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        
         return view('admin.posts.create');
     }
 
@@ -60,7 +61,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.index', compact('post'));
     }
 
     /**
@@ -84,7 +85,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataInput = $request ->all();
+
+        $post = Post::findOrFail($id);
+        $post->update($dataInput);
+        
+        return redirect()->route('homepage', $post->id);
     }
 
     /**
